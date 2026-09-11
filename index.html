@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>她的游戏档案 · Her Game Archive</title>
+<style>
+  :root {
+    --bg: #fdf6f9;
+    --surface: #ffffff;
+    --accent: #c084b8;
+    --accent2: #9b72aa;
+    --text: #2d1f2e;
+    --muted: #7a6080;
+    --border: #e8d5ed;
+    --tag-bg: #f3e8f7;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Georgia', 'Noto Serif SC', serif;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+    line-height: 1.7;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header h1 {
+    font-size: 2em;
+    color: var(--accent2);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    color: var(--muted);
+    font-size: 0.95em;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-header .emoji {
+    font-size: 1.3em;
+  }
+
+  .section-header h2 {
+    font-size: 1.05em;
+    color: var(--accent2);
+    font-weight: normal;
+    letter-spacing: 0.02em;
+  }
+
+  .section-header .en {
+    font-size: 0.82em;
+    color: var(--muted);
+  }
+
+  .game-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .game-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 2px 12px rgba(192, 132, 184, 0.12);
+  }
+
+  .game-card a {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--accent2);
+    text-decoration: none;
+  }
+
+  .game-card a:hover {
+    text-decoration: underline;
+  }
+
+  .game-card .platform {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--accent2);
+    font-size: 0.72em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    vertical-align: middle;
+    font-family: system-ui, sans-serif;
+  }
+
+  .game-card .desc-zh {
+    margin-top: 6px;
+    font-size: 0.9em;
+    color: var(--text);
+  }
+
+  .game-card .desc-en {
+    margin-top: 3px;
+    font-size: 0.82em;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.82em;
+    color: var(--muted);
+    font-family: system-ui, sans-serif;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>她的游戏档案 · Her Game Archive</h1>
+  <p>不评分，只定位。按你此刻的情绪找游戏。<br>
+  <span style="font-size:0.9em">No ratings. Just honest placement. Find a game for how you feel right now.</span></p>
+</header>
+
+<!-- 分类 1 -->
+<div class="section">
+  <div class="section-header">
+    <span class="emoji">🫂</span>
+    <h2>想被认真对待的恋爱体验</h2>
+    <span class="en">Love stories that take you seriously</span>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1279400/Collar_x_Malice/" target="_blank">Collar × Malice</a>
+    <span class="platform">Steam · Switch</span>
+    <p class="desc-zh">犯罪悬疑包裹的恋爱，每个角色都有真实的内心创伤，不会因为你是女主就对你客气。</p>
+    <p class="desc-en">Romance wrapped in crime thriller — every route carries real emotional weight, not just charm.</p>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1388590/Bustafellows/" target="_blank">Bustafellows</a>
+    <span class="platform">Steam · Switch · iOS</span>
+    <p class="desc-zh">如果你想要一个真正把你当主角写的女主，而不是背景板，选这个。</p>
+    <p class="desc-en">A heroine written as an actual protagonist — sharp, funny, and never passive.</p>
+  </div>
+</div>
+
+<!-- 分类 2 -->
+<div class="section">
+  <div class="section-header">
+    <span class="emoji">🌙</span>
+    <h2>只想安静待一会儿</h2>
+    <span class="en">Quiet games for quiet moments</span>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1055540/A_Short_Hike/" target="_blank">A Short Hike</a>
+    <span class="platform">Steam · Switch</span>
+    <p class="desc-zh">不恋爱，不打 Boss，就是爬山和遇见人。治愈到离谱，两小时结束，刚刚好。</p>
+    <p class="desc-en">No combat, no stakes — just hiking and small conversations. Over in two hours, and that's perfect.</p>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/972660/Spiritfarer_Farewell_Edition/" target="_blank">Spiritfarer</a>
+    <span class="platform">Steam · Switch</span>
+    <p class="desc-zh">关于告别的游戏。玩完会哭，但不是那种让你难受的哭。</p>
+    <p class="desc-en">A game about letting go. You will cry, but it's the kind that feels like relief.</p>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1149220/Coffee_Talk/" target="_blank">Coffee Talk</a>
+    <span class="platform">Steam · iOS</span>
+    <p class="desc-zh">深夜咖啡馆，听别人说话，冲饮料，不需要做任何重要决定。</p>
+    <p class="desc-en">Late-night café, strangers' stories, drinks to brew. Nothing is urgent here.</p>
+  </div>
+</div>
+
+<!-- 分类 3 -->
+<div class="section">
+  <div class="section-header">
+    <span class="emoji">🔥</span>
+    <h2>想要有点分量的故事</h2>
+    <span class="en">Stories with real weight</span>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/" target="_blank">Disco Elysium</a>
+    <span class="platform">Steam</span>
+    <p class="desc-zh">目前叙事密度最高的 RPG 之一。没有战斗，全靠对话和内心独白驱动，女性玩家评价极高。</p>
+    <p class="desc-en">The densest narrative RPG ever made. No combat — just dialogue, choices, and a detective falling apart.</p>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1743100/The_Forgotten_City/" target="_blank">The Forgotten City</a>
+    <span class="platform">Steam</span>
+    <p class="desc-zh">罗马时代的时间循环推理。全程靠对话和智慧通关，没有一场战斗是必须打的。</p>
+    <p class="desc-en">Time-loop mystery in ancient Rome. Every puzzle solved through conversation, never combat.</p>
+  </div>
+</div>
+
+<!-- 分类 4 -->
+<div class="section">
+  <div class="section-header">
+    <span class="emoji">🤝</span>
+    <h2>想要真实的群像和关系</h2>
+    <span class="en">Ensemble casts worth caring about</span>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank">Hades</a>
+    <span class="platform">Steam · Switch</span>
+    <p class="desc-zh">打架之外是一群有血有肉的神。关系网络比主线更好看，每次死亡都推进剧情。</p>
+    <p class="desc-en">The combat is excellent; the cast of gods is better. Every run deepens a relationship.</p>
+  </div>
+
+  <div class="game-card">
+    <a href="https://store.steampowered.com/app/1627340/Strange_Horticulture/" target="_blank">Strange Horticulture</a>
+    <span class="platform">Steam</span>
+    <p class="desc-zh">一个人经营草药铺，和小镇居民慢慢建立信任，气氛是那种阴天下午的安静。</p>
+    <p class="desc-en">Run a herbalist shop, slowly earn the town's trust. Quiet and atmospheric like a grey afternoon.</p>
+  </div>
+</div>
+
+<footer>
+  策展人工作中 · Curation in progress<br>
+  持续更新 · Updated regularly
+</footer>
+
+</body>
+</html>
