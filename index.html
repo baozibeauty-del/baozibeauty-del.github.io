@@ -15,125 +15,136 @@
     --border: #e8d5ed;
     --tag-bg: #f3e8f7;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Georgia', 'Noto Serif SC', serif;
-    max-width: 760px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 48px 24px 80px;
     line-height: 1.7;
   }
 
-  header {
-    text-align: center;
-    margin-bottom: 56px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  header h1 {
-    font-size: 2em;
+  /* ── Header ── */
+  header { text-align: center; margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 1.9em; color: var(--accent2); letter-spacing: 0.04em; margin-bottom: 10px; }
+  .slogan-zh { color: var(--text); font-size: 0.95em; margin-bottom: 4px; }
+  .slogan-en { color: var(--muted); font-size: 0.82em; font-family: system-ui, sans-serif; }
+  .safe-badge {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--tag-bg);
     color: var(--accent2);
-    letter-spacing: 0.04em;
-    margin-bottom: 8px;
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 0.8em;
+    font-family: system-ui, sans-serif;
+    border: 1px solid var(--border);
   }
 
-  header p {
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+    justify-content: center;
+  }
+  .filter-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.8em;
+    font-family: system-ui, sans-serif;
     color: var(--muted);
-    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent2);
+    color: #fff;
+    border-color: var(--accent2);
   }
 
-  .section {
-    margin-bottom: 48px;
-  }
-
+  /* ── Section ── */
+  .section { margin-bottom: 52px; }
   .section-header {
     display: flex;
     align-items: baseline;
-    gap: 12px;
-    margin-bottom: 20px;
+    gap: 10px;
+    margin-bottom: 16px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
   }
+  .section-header .emoji { font-size: 1.2em; }
+  .section-header h2 { font-size: 1em; color: var(--accent2); font-weight: normal; }
+  .section-header .en { font-size: 0.8em; color: var(--muted); font-family: system-ui, sans-serif; }
 
-  .section-header .emoji {
-    font-size: 1.3em;
-  }
-
-  .section-header h2 {
-    font-size: 1.05em;
-    color: var(--accent2);
-    font-weight: normal;
-    letter-spacing: 0.02em;
-  }
-
-  .section-header .en {
-    font-size: 0.82em;
-    color: var(--muted);
-  }
-
+  /* ── Game card ── */
   .game-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 18px 20px;
-    margin-bottom: 12px;
+    padding: 16px 18px;
+    margin-bottom: 10px;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
-
-  .game-card:hover {
-    border-color: var(--accent);
-    box-shadow: 0 2px 12px rgba(192, 132, 184, 0.12);
-  }
-
+  .game-card:hover { border-color: var(--accent); box-shadow: 0 2px 14px rgba(192,132,184,0.13); }
+  .card-top { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
   .game-card a {
     font-size: 1em;
     font-weight: bold;
     color: var(--accent2);
     text-decoration: none;
   }
-
-  .game-card a:hover {
-    text-decoration: underline;
-  }
-
-  .game-card .platform {
+  .game-card a:hover { text-decoration: underline; }
+  .tag {
     display: inline-block;
-    background: var(--tag-bg);
-    color: var(--accent2);
-    font-size: 0.72em;
-    padding: 2px 8px;
     border-radius: 20px;
-    margin-left: 8px;
-    vertical-align: middle;
+    padding: 1px 9px;
+    font-size: 0.72em;
     font-family: system-ui, sans-serif;
   }
+  .tag-platform { background: var(--tag-bg); color: var(--accent2); }
+  .tag-time { background: #fef3c7; color: #92400e; }
+  .tag-cost-free { background: #d1fae5; color: #065f46; }
+  .tag-cost-light { background: #e0f2fe; color: #0c4a6e; }
+  .tag-cost-warn { background: #fee2e2; color: #991b1b; }
+  .tag-solo { background: #ede9fe; color: #5b21b6; }
+  .desc-zh { font-size: 0.88em; color: var(--text); margin-bottom: 3px; }
+  .desc-en { font-size: 0.8em; color: var(--muted); font-family: system-ui, sans-serif; }
 
-  .game-card .desc-zh {
-    margin-top: 6px;
-    font-size: 0.9em;
-    color: var(--text);
+  /* ── Curator note ── */
+  .curator-note {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 52px 0 40px;
+    text-align: center;
   }
+  .curator-note p { font-size: 0.88em; color: var(--muted); font-family: system-ui, sans-serif; line-height: 1.8; }
+  .curator-note strong { color: var(--accent2); }
 
-  .game-card .desc-en {
-    margin-top: 3px;
-    font-size: 0.82em;
-    color: var(--muted);
-    font-family: system-ui, sans-serif;
-  }
-
+  /* ── Footer ── */
   footer {
     text-align: center;
-    margin-top: 64px;
+    margin-top: 48px;
     padding-top: 24px;
     border-top: 1px solid var(--border);
     font-size: 0.82em;
     color: var(--muted);
     font-family: system-ui, sans-serif;
+    line-height: 2;
+  }
+  footer a { color: var(--accent2); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    body { padding: 28px 16px 60px; }
+    header h1 { font-size: 1.4em; }
   }
 </style>
 </head>
@@ -141,87 +152,168 @@
 
 <header>
   <h1>她的游戏档案 · Her Game Archive</h1>
-  <p>不评分，只定位。按你此刻的情绪找游戏。<br>
-  <span style="font-size:0.9em">No ratings. Just honest placement. Find a game for how you feel right now.</span></p>
+  <p class="slogan-zh">不评分，只定位。按你此刻的情绪找游戏。</p>
+  <p class="slogan-en">No ratings. Just honest placement. Find a game for how you feel right now.</p>
+  <span class="safe-badge">🔒 无评判的安全空间 · A judgment-free zone</span>
 </header>
 
-<!-- 分类 1 -->
+<!-- Filter bar -->
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterAll(this)">全部 All</button>
+  <button class="filter-btn" onclick="filterTag(this,'mobile')">📱 手机可玩</button>
+  <button class="filter-btn" onclick="filterTag(this,'free')">🆓 零氪/免费</button>
+  <button class="filter-btn" onclick="filterTag(this,'solo')">🎧 单机无压力</button>
+  <button class="filter-btn" onclick="filterTag(this,'cn')">🇨🇳 国产</button>
+</div>
+
+<!-- ── 分类 1 ── -->
 <div class="section">
   <div class="section-header">
     <span class="emoji">🫂</span>
     <h2>想被认真对待的恋爱体验</h2>
-    <span class="en">Love stories that take you seriously</span>
+    <span class="en">Love stories that treat you as the protagonist</span>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1279400/Collar_x_Malice/" target="_blank">Collar × Malice</a>
-    <span class="platform">Steam · Switch</span>
+  <div class="game-card" data-tags="mobile cn solo">
+    <div class="card-top">
+      <a href="https://www.loversky.com" target="_blank">恋与深空</a>
+      <span class="tag tag-platform">iOS · Android · PC</span>
+      <span class="tag tag-cost-warn">💸 微氪体验好</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 深度沉浸 20h+</span>
+    </div>
+    <p class="desc-zh">3D实时互动恋爱，战斗系统真实有力度。如果你想要一个既好看又不只靠颜值撑场的男主，这是目前国产乙游的天花板。</p>
+    <p class="desc-en">3D real-time romance with actual combat depth. The current benchmark for CN otome production quality.</p>
+  </div>
+
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1279400/Collar_x_Malice/" target="_blank">Collar × Malice</a>
+      <span class="tag tag-platform">Steam · Switch</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 中度剧情 15-20h</span>
+    </div>
     <p class="desc-zh">犯罪悬疑包裹的恋爱，每个角色都有真实的内心创伤，不会因为你是女主就对你客气。</p>
     <p class="desc-en">Romance wrapped in crime thriller — every route carries real emotional weight, not just charm.</p>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1388590/Bustafellows/" target="_blank">Bustafellows</a>
-    <span class="platform">Steam · Switch · iOS</span>
-    <p class="desc-zh">如果你想要一个真正把你当主角写的女主，而不是背景板，选这个。</p>
+  <div class="game-card" data-tags="mobile solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1388590/Bustafellows/" target="_blank">Bustafellows</a>
+      <span class="tag tag-platform">Steam · Switch · iOS</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 深度沉浸 20h+</span>
+    </div>
+    <p class="desc-zh">如果你想要一个真正把你当主角写的女主——而不是背景板——选这个。</p>
     <p class="desc-en">A heroine written as an actual protagonist — sharp, funny, and never passive.</p>
   </div>
 </div>
 
-<!-- 分类 2 -->
+<!-- ── 分类 2 ── -->
 <div class="section">
   <div class="section-header">
-    <span class="emoji">🌙</span>
-    <h2>只想安静待一会儿</h2>
-    <span class="en">Quiet games for quiet moments</span>
+    <span class="emoji">🌿</span>
+    <h2>只想安静待一会儿（Cozy 舒适区）</h2>
+    <span class="en">Quiet games for quiet moments · Cozy &amp; light</span>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1055540/A_Short_Hike/" target="_blank">A Short Hike</a>
-    <span class="platform">Steam · Switch</span>
+  <div class="game-card" data-tags="mobile cn free solo">
+    <div class="card-top">
+      <a href="https://apps.apple.com/app/id6478119996" target="_blank">我的花园世界 · My Garden Life</a>
+      <span class="tag tag-platform">微信小游戏 · 抖音 · iOS · Android</span>
+      <span class="tag tag-cost-free">💸 零氪友好</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 轻量日常 10分钟/天</span>
+    </div>
+    <p class="desc-zh">合成+花园经营，微信/抖音直接开玩，不需要下载。峰值日活千万的国产轻量爆款，适合碎片时间。</p>
+    <p class="desc-en">Merge &amp; garden game, playable directly in WeChat/Douyin. 10M daily peak — proof that cozy works globally.</p>
+  </div>
+
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1055540/A_Short_Hike/" target="_blank">A Short Hike</a>
+      <span class="tag tag-platform">Steam · Switch</span>
+      <span class="tag tag-cost-light">💸 买断制 约¥25</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 轻量 2小时结束</span>
+    </div>
     <p class="desc-zh">不恋爱，不打 Boss，就是爬山和遇见人。治愈到离谱，两小时结束，刚刚好。</p>
     <p class="desc-en">No combat, no stakes — just hiking and small conversations. Over in two hours, and that's perfect.</p>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/972660/Spiritfarer_Farewell_Edition/" target="_blank">Spiritfarer</a>
-    <span class="platform">Steam · Switch</span>
-    <p class="desc-zh">关于告别的游戏。玩完会哭，但不是那种让你难受的哭。</p>
-    <p class="desc-en">A game about letting go. You will cry, but it's the kind that feels like relief.</p>
-  </div>
-
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1149220/Coffee_Talk/" target="_blank">Coffee Talk</a>
-    <span class="platform">Steam · iOS</span>
+  <div class="game-card" data-tags="mobile solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1149220/Coffee_Talk/" target="_blank">Coffee Talk</a>
+      <span class="tag tag-platform">Steam · iOS</span>
+      <span class="tag tag-cost-light">💸 买断制 约¥40</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 轻量 5-6小时</span>
+    </div>
     <p class="desc-zh">深夜咖啡馆，听别人说话，冲饮料，不需要做任何重要决定。</p>
     <p class="desc-en">Late-night café, strangers' stories, drinks to brew. Nothing is urgent here.</p>
   </div>
+
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/972660/Spiritfarer_Farewell_Edition/" target="_blank">Spiritfarer</a>
+      <span class="tag tag-platform">Steam · Switch</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 中度剧情 15h+</span>
+    </div>
+    <p class="desc-zh">关于告别的游戏。玩完会哭，但不是那种让你难受的哭。</p>
+    <p class="desc-en">A game about letting go. You will cry, but it's the kind that feels like relief.</p>
+  </div>
 </div>
 
-<!-- 分类 3 -->
+<!-- ── 分类 3 ── -->
 <div class="section">
   <div class="section-header">
     <span class="emoji">🔥</span>
     <h2>想要有点分量的故事</h2>
-    <span class="en">Stories with real weight</span>
+    <span class="en">Narratives that leave a mark</span>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/" target="_blank">Disco Elysium</a>
-    <span class="platform">Steam</span>
+  <div class="game-card" data-tags="mobile cn solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/2476290" target="_blank">盛世天下·女帝篇</a>
+      <span class="tag tag-platform">Steam · iOS</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 中度剧情 10-15h</span>
+    </div>
+    <p class="desc-zh">互动影像+权谋叙事，你扮演的是女帝而不是等待被拯救的人。上线5天销量破百万，证明这个市场需要强女主。</p>
+    <p class="desc-en">Interactive film with power-politics storytelling — you play the empress, not the damsel. 1M copies in 5 days.</p>
+  </div>
+
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/" target="_blank">Disco Elysium</a>
+      <span class="tag tag-platform">Steam</span>
+      <span class="tag tag-cost-light">💸 纯单机买断</span>
+      <span class="tag tag-solo">🎧 零战斗压力</span>
+      <span class="tag tag-time">⏱️ 深度沉浸 30h+</span>
+    </div>
     <p class="desc-zh">目前叙事密度最高的 RPG 之一。没有战斗，全靠对话和内心独白驱动，女性玩家评价极高。</p>
     <p class="desc-en">The densest narrative RPG ever made. No combat — just dialogue, choices, and a detective falling apart.</p>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1743100/The_Forgotten_City/" target="_blank">The Forgotten City</a>
-    <span class="platform">Steam</span>
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1743100/The_Forgotten_City/" target="_blank">The Forgotten City</a>
+      <span class="tag tag-platform">Steam</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 无需战斗</span>
+      <span class="tag tag-time">⏱️ 中度剧情 6-8h</span>
+    </div>
     <p class="desc-zh">罗马时代的时间循环推理。全程靠对话和智慧通关，没有一场战斗是必须打的。</p>
     <p class="desc-en">Time-loop mystery in ancient Rome. Every puzzle solved through conversation, never combat.</p>
   </div>
 </div>
 
-<!-- 分类 4 -->
+<!-- ── 分类 4 ── -->
 <div class="section">
   <div class="section-header">
     <span class="emoji">🤝</span>
@@ -229,25 +321,110 @@
     <span class="en">Ensemble casts worth caring about</span>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank">Hades</a>
-    <span class="platform">Steam · Switch</span>
-    <p class="desc-zh">打架之外是一群有血有肉的神。关系网络比主线更好看，每次死亡都推进剧情。</p>
-    <p class="desc-en">The combat is excellent; the cast of gods is better. Every run deepens a relationship.</p>
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1145360/Hades/" target="_blank">Hades</a>
+      <span class="tag tag-platform">Steam · Switch</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 死亡即推进剧情</span>
+    </div>
+    <p class="desc-zh">打架之外是一群有血有肉的神。关系网络比主线更好看，每次死亡都推进剧情，不会有挫败感。</p>
+    <p class="desc-en">The combat is excellent; the cast of gods is better. Every death deepens a relationship — failure feels like progress.</p>
   </div>
 
-  <div class="game-card">
-    <a href="https://store.steampowered.com/app/1627340/Strange_Horticulture/" target="_blank">Strange Horticulture</a>
-    <span class="platform">Steam</span>
+  <div class="game-card" data-tags="solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1616200/Strange_Horticulture/" target="_blank">Strange Horticulture</a>
+      <span class="tag tag-platform">Steam</span>
+      <span class="tag tag-cost-light">💸 买断制</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 中度 6-8h</span>
+    </div>
     <p class="desc-zh">一个人经营草药铺，和小镇居民慢慢建立信任，气氛是那种阴天下午的安静。</p>
     <p class="desc-en">Run a herbalist shop, slowly earn the town's trust. Quiet and atmospheric like a grey afternoon.</p>
   </div>
 </div>
 
+<!-- ── 分类 5（新增） ── -->
+<div class="section">
+  <div class="section-header">
+    <span class="emoji">🆓</span>
+    <h2>零负担的免费试玩</h2>
+    <span class="en">Free to play · No download needed</span>
+  </div>
+
+  <div class="game-card" data-tags="free solo">
+    <div class="card-top">
+      <a href="https://brianna-lei.itch.io/butterfly-soup" target="_blank">Butterfly Soup</a>
+      <span class="tag tag-platform">PC · itch.io</span>
+      <span class="tag tag-cost-free">💸 完全免费</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 轻量 3-4h</span>
+    </div>
+    <p class="desc-zh">亚裔女孩棒球队的青春百合故事，完全免费，itch.io 直接下载。文字量不大，下午读完刚好。</p>
+    <p class="desc-en">A coming-of-age GL story about Asian-American girls and baseball. Free on itch.io. Warm and wholesome.</p>
+  </div>
+
+  <div class="game-card" data-tags="mobile free cn solo">
+    <div class="card-top">
+      <a href="https://store.steampowered.com/app/1388590/" target="_blank">浪漫餐厅 · Gossip Harbor</a>
+      <span class="tag tag-platform">iOS · Google Play</span>
+      <span class="tag tag-cost-free">💸 零氪可体验</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 轻量日常 10分钟/天</span>
+    </div>
+    <p class="desc-zh">合成玩法+剧情解锁，海外总收入27亿元的出海爆款。无需组队，每天打开合几下就有剧情推进。</p>
+    <p class="desc-en">Merge gameplay with story unlocks — CN's biggest female-market export hit. Play at your own pace, no guilds needed.</p>
+  </div>
+
+  <div class="game-card" data-tags="free solo">
+    <div class="card-top">
+      <a href="https://npckc.itch.io/a-tavern-for-tea" target="_blank">A Tavern for Tea</a>
+      <span class="tag tag-platform">Browser · itch.io</span>
+      <span class="tag tag-cost-free">💸 完全免费 · 浏览器即玩</span>
+      <span class="tag tag-solo">🎧 单机无压力</span>
+      <span class="tag tag-time">⏱️ 超轻量 1h内</span>
+    </div>
+    <p class="desc-zh">浏览器直接玩，无需下载。一间茶馆，几个角色，用泡茶的选择推进对话。适合第一次接触视觉小说的人。</p>
+    <p class="desc-en">Plays in your browser — no install. A tea shop, a few characters, and choices made through brewing. Perfect first visual novel.</p>
+  </div>
+</div>
+
+<!-- Curator note -->
+<div class="curator-note">
+  <p>
+    <strong>为什么我们要做这个？</strong><br>
+    因为我们厌倦了在数千个同质化游戏中盲目试错。<br>
+    我们相信游戏是情绪的避风港——不论你今天是来寻找心动、寻找平静，还是只想被当作主角认真对待。<br><br>
+    <em>Why we built this: because we got tired of trial-and-error through thousands of look-alike titles.<br>
+    We believe games can be emotional safe harbors — whatever you're looking for today.</em>
+  </p>
+</div>
+
 <footer>
-  策展人工作中 · Curation in progress<br>
-  持续更新 · Updated regularly
+  找不到合适的？告诉我们你现在的情绪，我们帮你找。<br>
+  <em>Can't find the right match? Tell us how you feel — we'll find one for you.</em><br><br>
+  📮 <a href="mailto:baozibeauty@gmail.com">发邮件给我们 · Write to us</a>
+  &nbsp;·&nbsp;
+  策展持续更新中 · Curation in progress
 </footer>
+
+<script>
+  function filterAll(btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.game-card').forEach(c => c.style.display = '');
+  }
+  function filterTag(btn, tag) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.game-card').forEach(c => {
+      const tags = (c.dataset.tags || '').split(' ');
+      c.style.display = tags.includes(tag) ? '' : 'none';
+    });
+  }
+</script>
 
 </body>
 </html>
